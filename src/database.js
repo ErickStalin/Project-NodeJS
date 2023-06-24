@@ -2,7 +2,8 @@ const mongoose = require('mongoose')
 
 //Conexion de la base de datos atlas
 const {DBUSER,DBPASSWORD,DBNAME} = process.env
-const MONGODB_URI = `mongodb+srv://${DBUSER}:${DBPASSWORD}@cluster0.zfillyx.mongodb.net/${DBNAME}`
+//const MONGODB_URI = `mongodb+srv://${DBUSER}:${DBPASSWORD}@cluster0.xww8zdg.mongodb.net/${DBNAME}`
+const MONGODB_URI = 'mongodb://0.0.0.0:27017/portafolio' //La direccion
 
 connection = async()=>{
     try {

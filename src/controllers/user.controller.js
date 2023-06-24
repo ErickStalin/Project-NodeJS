@@ -57,6 +57,9 @@ const confirmEmail = async(req,res)=>{
     res.send('Token confirmado, ya puedes iniciar sesión');
 }
 
+const perfilUsuario = (req,res) => {
+    res.render('user/perfil')
+}
 
 module.exports={
     renderRegisterForm,
@@ -64,5 +67,6 @@ module.exports={
     renderLoginForm,
     loginUser,
     logoutUser,
-    confirmEmail
+    confirmEmail,
+    perfilUsuario
 }
