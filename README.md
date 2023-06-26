@@ -1,10 +1,16 @@
-# Creación de perfil de usaurio (Sebastian Congo- Erick Palomo)
-![exam_evidencia](https://github.com/ErickStalin/Project-NodeJS/assets/75103508/6df08b2a-00af-4dfa-956a-dcda315e3ae3)
-# Creaciónn de perfil.hbs
-![image](https://github.com/ErickStalin/Project-NodeJS/assets/75103508/7b414a50-70ec-4433-aa84-83cd23584baa)
-# Definición de rutas
-![image](https://github.com/ErickStalin/Project-NodeJS/assets/75103508/2a188b61-7dc9-4997-bdad-c439facd9811)
-# Deficnición de controladores
-![image](https://github.com/ErickStalin/Project-NodeJS/assets/75103508/afd0e0e7-6407-4f63-ba32-439a15f144be)
 
+# Login
 
+![image](https://github.com/ErickStalin/Project-NodeJS/assets/117755180/405c6c41-e43d-4692-898a-45db7d5e93f6)
+
+# Portafolios
+
+![image](https://github.com/ErickStalin/Project-NodeJS/assets/117755180/c38d08bf-921b-41b8-b559-43853c961da7)
+
+# Perfil
+
+![image](https://github.com/ErickStalin/Project-NodeJS/assets/117755180/4f50c3f5-4503-4550-882a-3e3e3532943d)
+
+# Editar Perfil
+
+![image](https://github.com/ErickStalin/Project-NodeJS/assets/117755180/bbfa7aa0-2ed7-46b5-a20f-b8c37d060b8a)
