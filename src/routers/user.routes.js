@@ -6,8 +6,7 @@ const { renderRegisterForm,
     renderLoginForm, 
     loginUser, 
     logoutUser,
-    confirmEmail,
-    perfilUsuario} = require('../controllers/user.controller')
+    confirmEmail} = require('../controllers/user.controller')
 //Inicializar la funcion de la variable router
 const router = Router()
 //Definir las rutas
@@ -17,5 +16,4 @@ router.post('/user/register',registerNewUser)
 router.get('/user/login',renderLoginForm)
 router.post('/user/login',loginUser)
 router.post('/user/logout',logoutUser)
-router.post('/user/perfil', perfilUsuario)
 module.exports =router

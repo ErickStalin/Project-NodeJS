@@ -9,8 +9,10 @@ const renderRegisterForm =(req,res)=>{
 }
 
 const registerNewUser = async(req,res)=>{
+
     //DESESTRUCTURAR LOS DATOS DEL FORMULARIO
     const{name,email,password,confirmpassword} = req.body
+
     //VALIDAR QUE TODOS LOS CAMPOS ESTEN COMPLETOS
     if (Object.values(req.body).includes("")) return res.send("Lo sentimos, debes llenar todos los campos")
     //VALIDAR QUE LAS PASSWORD SEAN IGUALES
@@ -22,7 +24,17 @@ const registerNewUser = async(req,res)=>{
     //GUARDAR EL REGISTRO EN LA BD
     const newUser = await new User({name,email,password,confirmpassword})
     //ENCRIPTAR LA PASSWORD Y ENVIO
+
     newUser.password = await newUser.encrypPassword(password)
+    
+    //newUser.image= 'https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp'
+    
+    newUser.names = " ---------- "
+    newUser.date = "00-00-0000"
+    newUser.location = " ----------- "
+    newUser.ocupation = " ----------- "
+
+    
     const token = newUser.crearToken()
     sendMailToUser(email,token)
     newUser.save()
@@ -57,16 +69,11 @@ const confirmEmail = async(req,res)=>{
     res.send('Token confirmado, ya puedes iniciar sesión');
 }
 
-const perfilUsuario = (req,res) => {
-    res.render('user/perfil')
-}
-
 module.exports={
     renderRegisterForm,
     registerNewUser,
     renderLoginForm,
     loginUser,
     logoutUser,
-    confirmEmail,
-    perfilUsuario
+    confirmEmail
 }

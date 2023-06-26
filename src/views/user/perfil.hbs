@@ -18,6 +18,7 @@
       padding: 20px;
       border-radius: 5px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
 
     h2 {
@@ -25,9 +26,11 @@
     }
 
     #foto-perfil img {
-      width: 150px;
-      height: 150px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
+      justify-content: center;
+      margin: 30px 5px;
     }
 
     #informacion ul {
@@ -61,20 +64,83 @@
 <body>
   <div id="perfil">
     <div id="foto-perfil">
-      <img src="ruta/a/tu/foto-de-perfil.jpg" alt="Foto de perfil" onerror="">
+      <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top" alt="Skyscrapers"/>
     </div>
     <div id="informacion">
-      <h2>Información personal</h2>
-      <ul>
-        <li><strong>Nombre completo:</strong> Nombre Apellido</li>
-        <li><strong>Fecha de nacimiento:</strong> DD/MM/AAAA</li>
-        <li><strong>Ubicación:</strong> Ciudad, País</li>
-        <li><strong>Ocupación:</strong> Ocupación actual</li>
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">INFORMACIÓN PERSONAL</h2>
+      <h5>{{USER.name}}</h5> 
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <h6 class="card-text">EMAIL:  </h6>{{USER.names}}
+        <h6 class="card-text">FECHA DE NACIMIENTO:   </h6>{{USER.date}}
+        <h6 class="card-text">UBICACIÓN:    </h6> {{USER.location}}
+        <h6 class="card-text">OCUPACIÓN:  </h6> {{USER.ocupation}}
       </ul>
     </div>
     <div id="editar-perfil">
-      <button>Editar perfil</button>
+      <a href="/user/editarPerfil/{{USER._id}}" class="nav-item mx-0 mx-lg-1">
+          <button class="nav-link py-3 px-0 px-lg-3 rounded">Editar Perfil</button>
+      </a>
     </div>
   </div>
 </body>
 </html>
+
+{{!-- <!-- Portfolio Section-->
+<section class="page-section mt-5" id="perfil">
+  <style>
+    #foto-perfil img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      text-align: center;
+      margin: 20px 50px;
+      align-content: center;
+    }
+  </style>
+    <div class="container">
+        <!-- Contact Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">INFORMACIÓN PERSONAL</h2>
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Section Portfolios -->
+        <div class="row justify-content-center">
+            <section class=" portfolio" id="portfolio">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 col-lg-4 mb-2">
+                            <div class="card h-100">
+                                
+                                <div id="foto-perfil">
+                                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top" alt="Skyscrapers"/>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-text">NOMBRES:  </h6>{{USER.names}}
+                                    <h6 class="card-text">FECHA DE NACIMIENTO:   </h6>{{USER.date}}
+                                    <h6 class="card-text">UBICACIÓN:    {{USER.location}}</h6>
+                                    <h6 class="card-text">OCUPACIÓN:  {{USER.ocupation}}</h6>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <button class="btn btn-primary btn-sm">More information</button>
+                                    <a href="/portafolio/edit/{{_id}}" >
+                                    <button class="btn btn-warning btn-sm">Update</button>
+                                    </a>
+                                    <form action="/portafolio/delete/{{_id}}?_method=DELETE" method="POST" class="d-inline">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section> --}}
