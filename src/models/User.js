@@ -20,6 +20,22 @@ const userSchema = new Schema({
 confirmEmail:{
         type:Boolean,
         default:false
+    },
+    names:{
+        type:String,
+        require:true
+    },
+    date :{
+        type:String, // String, si no funciona Date
+        require:true
+    },
+    location:{
+        type:String,
+        require:true
+    },
+    ocupation:{
+        type:String,
+        require:true
     }
 },{
     timestamps:true

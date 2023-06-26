@@ -1,0 +1,56 @@
+<!-- Portfolio Section-->
+        <section class="page-section mt-5" id="login">
+            <div class="container">
+                <!-- Contact Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Información Personal</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+
+                <!-- Portfolio Section Form-->
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-xl-7">
+                        <form action="/user/editarPerfil/{{editarP._id}}?_method=PUT" method="POST" class="d-inline" enctype="multipart/form-data"></form>
+                            <!-- Image input-->
+                            {{!-- <div class="form-floating mb-3">
+                                <input class="form-control" id="image" type="file" placeholder="Imagen" required name="image" />
+                                <label for="image">Foto de Perfil</label>
+                            </div> --}}
+                            <input type="hidden" name="_method" value="PUT">
+
+                            <!-- Name input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="names" type="text" placeholder="Nombre" required name="title" value="{{editarP.names}}" />
+                                <label for="title">Nombre Completo</label>
+                            </div>
+
+                            <!-- Date input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="date" type="date" placeholder="Fecha" required name="category" value="{{editarP.date}}"/>
+                                <label for="category">Fecha de Nacimiento</label>
+                            </div>
+
+                            <!-- Location input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="location" type="text" placeholder="Nombre" required name="title" value="{{editarP.location}}"/>
+                                <label for="title">Ciudad de Nacimiento</label>
+                            </div>
+                            
+                            <!-- Description input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="ocupation" type="text" placeholder="Nombre" required name="title" value="{{editarP.ocupation}}"/>
+                                <label for="title">Ocupación</label>
+                            </div>
+
+                            <!-- Submit Button-->
+                            <button class="btn btn-primary btn-xl " type="submit">Enviar</button>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </section>
