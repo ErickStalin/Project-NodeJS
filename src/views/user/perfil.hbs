@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Perfil de Usuario</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #perfil {
+      max-width: 800px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    #foto-perfil img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      justify-content: center;
+      margin: 30px 5px;
+    }
+
+    #informacion ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #informacion ul li {
+      margin-bottom: 10px;
+    }
+
+    #editar-perfil {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #editar-perfil button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="perfil">
+    <div id="foto-perfil">
+      {{#if USER.image}}
+      <img src="{{USER.image}}" alt="Foto de perfil" class="card-img-top" />
+      {{else}}
+      <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" alt="Foto de perfil por defecto" class="card-img-top" />
+      {{/if}}
+  </div>
+    <div id="informacion">
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">INFORMACIÓN PERSONAL</h2>
+      <h3>{{USER.name}}</h3> 
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <h6 class="card-text">NOMBRE COMPLETO: {{USER.names}}</h6>
+        <h6 class="card-text">EMAIL: {{USER.email}}</h6>
+        <h6 class="card-text">FECHA DE NACIMIENTO: {{USER.date}}</h6>
+        <h6 class="card-text">UBICACIÓN: {{USER.location}}</h6>
+        <h6 class="card-text">OCUPACIÓN: {{USER.ocupation}}</h6>
+      </ul>
+    </div>
+    <div id="editar-perfil">
+      <a href="/user/editarPerfil/{{USER._id}}" class="nav-item mx-0 mx-lg-1">
+          <button class="nav-link py-3 px-0 px-lg-3 rounded">Editar Perfil</button>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Perfil de Usuario</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #perfil {
+      max-width: 800px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    #foto-perfil img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      justify-content: center;
+      margin: 30px 5px;
+    }
+
+    #informacion ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #informacion ul li {
+      margin-bottom: 10px;
+    }
+
+    #editar-perfil {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #editar-perfil button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="perfil">
+    <div id="foto-perfil">
+      <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top" alt="Skyscrapers"/>
+    </div>
+    <div id="informacion">
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">INFORMACIÓN PERSONAL</h2>
+      <h5>{{USER.name}}</h5> 
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <h6 class="card-text">EMAIL:  </h6>{{USER.names}}
+        <h6 class="card-text">FECHA DE NACIMIENTO:   </h6>{{USER.date}}
+        <h6 class="card-text">UBICACIÓN:    </h6> {{USER.location}}
+        <h6 class="card-text">OCUPACIÓN:  </h6> {{USER.ocupation}}
+      </ul>
+    </div>
+    <div id="editar-perfil">
+      <a href="/user/editarPerfil/{{USER._id}}" class="nav-item mx-0 mx-lg-1">
+          <button class="nav-link py-3 px-0 px-lg-3 rounded">Editar Perfil</button>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+-->
+
+
+
+
+
+{{!-- <!-- Portfolio Section-->
+<section class="page-section mt-5" id="perfil">
+  <style>
+    #foto-perfil img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      text-align: center;
+      margin: 20px 50px;
+      align-content: center;
+    }
+  </style>
+    <div class="container">
+        <!-- Contact Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">INFORMACIÓN PERSONAL</h2>
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Section Portfolios -->
+        <div class="row justify-content-center">
+            <section class=" portfolio" id="portfolio">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 col-lg-4 mb-2">
+                            <div class="card h-100">
+                                
+                                <div id="foto-perfil">
+                                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top" alt="Skyscrapers"/>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-text">NOMBRES:  </h6>{{USER.names}}
+                                    <h6 class="card-text">FECHA DE NACIMIENTO:   </h6>{{USER.date}}
+                                    <h6 class="card-text">UBICACIÓN:    {{USER.location}}</h6>
+                                    <h6 class="card-text">OCUPACIÓN:  {{USER.ocupation}}</h6>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <button class="btn btn-primary btn-sm">More information</button>
+                                    <a href="/portafolio/edit/{{_id}}" >
+                                    <button class="btn btn-warning btn-sm">Update</button>
+                                    </a>
+                                    <form action="/portafolio/delete/{{_id}}?_method=DELETE" method="POST" class="d-inline">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section> --}}
